@@ -2,7 +2,7 @@
 
     define(function (require, exports, module) {
         var Promise = require('bluebird');
-        var EventEmitter = require('event-emitter');
+        var EventEmitter = require('wolfy87-eventemitter');
 
         var AsyncBox = function() {
             var asyncHandlers = new Map();
@@ -91,7 +91,7 @@
             };
         };
 
-        AsyncBox.prototype = EventEmitter.prototype;
+        AsyncBox.prototype = Object.create(EventEmitter.prototype);
 
         return AsyncBox;
     });

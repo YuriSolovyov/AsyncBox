@@ -1,7 +1,7 @@
 describe("async-box", function() {
     var AsyncBox = require('../index');
     var Promise = require('bluebird');
-    var EventEmitter = require('event-emitter');
+    var EventEmitter = require('wolfy87-eventemitter');
 
     var app;
     beforeEach(function() {
@@ -16,7 +16,8 @@ describe("async-box", function() {
             expect(app).toBeObject();
             expect(app instanceof AsyncBox).toBe(true);
 
-            expect(AsyncBox.prototype).toBe(EventEmitter.prototype);
+            expect(app.on).not.toBeUndefined();
+            expect(app.emit).not.toBeUndefined();
         });
 
     });

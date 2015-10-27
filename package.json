@@ -1,6 +1,6 @@
 {
   "name": "async-box",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Your main application object with promise async api API",
   "author": {
     "name": "Yuri Solovyov"
@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "bluebird": "3.0",
-    "event-emitter": "0.3.4"
+    "wolfy87-eventemitter": "4.3.0"
   },
   "devDependencies": {
     "jasmine": "^2.3.0",
