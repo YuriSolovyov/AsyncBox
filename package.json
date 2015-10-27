@@ -12,7 +12,7 @@
       "promise",
       "app"
   ],
-  "author": "",
+  "author": "yurisolovyov",
 
   "dependencies": {
       "bluebird": "3.0",
@@ -24,6 +24,5 @@
       "jasmine-spec-reporter": "^2.4.0",
       "jasmine-expect ": "latest"
   },
-  "private": "true",
   "license": "MIT"
 }
