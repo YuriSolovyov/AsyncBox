@@ -1,0 +1,29 @@
+{
+  "name": "async-box",
+  "version": "0.1.0",
+  "description": "Your main application object with promise async api API",
+  "main": "index.js",
+  "scripts": {
+      "test": "node spec/node-runner"
+  },
+  "keywords": [
+      "sandbox",
+      "async",
+      "promise",
+      "app"
+  ],
+  "author": "",
+
+  "dependencies": {
+      "bluebird": "2.10.0",
+      "event-emitter": "0.3.4"
+  },
+
+  "devDependencies": {
+      "jasmine": "^2.3.0",
+      "jasmine-spec-reporter": "^2.4.0",
+      "jasmine-expect ": "latest"
+  },
+  "private": "true",
+  "license": "MIT"
+}
