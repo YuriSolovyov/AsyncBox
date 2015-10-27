@@ -15,7 +15,7 @@
   "author": "",
 
   "dependencies": {
-      "bluebird": "2.10.0",
+      "bluebird": "3.0",
       "event-emitter": "0.3.4"
   },
 
