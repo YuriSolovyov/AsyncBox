@@ -2,27 +2,39 @@
   "name": "async-box",
   "version": "0.1.0",
   "description": "Your main application object with promise async api API",
-  "main": "index.js",
-  "scripts": {
-      "test": "node spec/node-runner"
+  "author": {
+    "name": "Yuri Solovyov"
   },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuriSolovyov/AsyncBox"
+  },
+
+  "main": "index.js",
+
+  "scripts": {
+    "test": "node spec/node-runner"
+  },
+
   "keywords": [
-      "sandbox",
-      "async",
-      "promise",
-      "app"
+    "sandbox",
+    "async",
+    "promise",
+    "app"
   ],
-  "author": "yurisolovyov",
+
 
   "dependencies": {
-      "bluebird": "3.0",
-      "event-emitter": "0.3.4"
+    "bluebird": "3.0",
+    "event-emitter": "0.3.4"
   },
 
   "devDependencies": {
-      "jasmine": "^2.3.0",
-      "jasmine-spec-reporter": "^2.4.0",
-      "jasmine-expect ": "latest"
+    "jasmine": "^2.3.0",
+    "jasmine-spec-reporter": "^2.4.0",
+    "jasmine-expect ": "latest"
   },
+
   "license": "MIT"
 }
