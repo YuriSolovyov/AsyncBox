@@ -1,4 +1,4 @@
-# AsyncBox
+# AsyncBox [![npm version](https://badge.fury.io/js/async-box.svg)](https://badge.fury.io/js/async-box)
 
 AsyncBox is a library for your main `application` object, it supports Sync and Async APIs
 
