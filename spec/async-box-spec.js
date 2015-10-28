@@ -1,7 +1,4 @@
 describe("async-box", function() {
-    var AsyncBox = require('../index');
-    var Promise = require('bluebird');
-    var EventEmitter = require('wolfy87-eventemitter');
 
     var app;
     beforeEach(function() {
@@ -142,7 +139,7 @@ describe("async-box", function() {
 
         });
 
-        it('should resolve a promise with responses array', function() {
+        it('should resolve a promise with responses array', function(done) {
             app.respondAsync('request-type-1', function(arg) {
                 return new Promise.delay(42).then(function() {
                     return arg;
@@ -174,41 +171,8 @@ describe("async-box", function() {
                 expect(responses).toContain('request-arg-4');
                 expect(responses).toContain('request-arg-5');
                 expect(responses).toContain('request-arg-6');
-            });
 
-        });
-
-        it('should spread results if spread option is passed', function() {
-            app.respondAsync('request-type-1', function(arg) {
-                return new Promise.delay(42).then(function() {
-                    return arg;
-                });
-            });
-
-            app.respondAsync('request-type-2', function(arg) {
-                return new Promise.delay(33).then(function() {
-                    return 'request-arg-' + arg;
-                });
-            });
-
-            app.requestAllAsync([
-                ['request-type-1', 'request-arg-1'],
-                ['request-type-1', 'request-arg-2'],
-                ['request-type-1', 'request-arg-3'],
-
-                ['request-type-2', 4],
-                ['request-type-2', 5],
-                ['request-type-2', 6],
-            ], {
-                spread: true
-            }).then(function(r1, r2, r3, r4, r5, r6) {
-                expect(r1).toBe('request-arg-1');
-                expect(r2).toBe('request-arg-2');
-                expect(r3).toBe('request-arg-3');
-
-                expect(r3).toBe('request-arg-4');
-                expect(r4).toBe('request-arg-5');
-                expect(r5).toBe('request-arg-6');
+                done()
             });
 
         });

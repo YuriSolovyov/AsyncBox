@@ -16,9 +16,14 @@ var reporter = new Reporter({
 });
 
 jasmine.getEnv().addReporter(reporter);
-runner.loadConfigFile();
-
-require('jasmine-expect');
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 100;
+runner.loadConfig({
+    spec_dir: "spec",
+    spec_files: [
+        "**/*[sS]pec.js"
+    ],
+    helpers: [
+        "helpers/**/*.js"
+    ]
+});
 
 runner.execute();

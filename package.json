@@ -9,9 +9,10 @@
     "type": "git",
     "url": "https://github.com/YuriSolovyov/AsyncBox"
   },
-  "main": "index.js",
+  "main": "lib/main.js",
   "scripts": {
-    "test": "node spec/node-runner"
+    "test": "node spec/node-runner",
+    "browser-build": "node build.js"
   },
   "keywords": [
     "sandbox",
@@ -26,7 +27,8 @@
   "devDependencies": {
     "jasmine": "^2.3.0",
     "jasmine-spec-reporter": "^2.4.0",
-    "jasmine-expect ": "latest"
+    "jasmine-expect ": "latest",
+    "webpack": "^1.12.2"
   },
   "license": "MIT"
 }
