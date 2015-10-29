@@ -1,6 +1,7 @@
 var webpack = require("webpack");
+var Promise = require("bluebird");
 
-webpack({
+var configs = [{
     entry: './lib/main.js',
     output: {
         path: __dirname + '/dist',
@@ -17,10 +18,21 @@ webpack({
             }
         })
     ]
-}, function(err, stats) {
-    if (!err) {
-        console.log(stats.toString());
-    } else {
-        console.log(err);
-    }
+}];
+
+Promise.map(configs, function(config) {
+    return new Promise(function(resolve, reject) {
+        webpack(config, function(err, stats) {
+            if (!err) {
+                resolve(stats);
+            } else {
+                reject(err);
+            }
+        });
+
+    });
+}).all().then(function(results) {
+    results.forEach(function(result) {
+        console.log(results.toString());
+    });
 });

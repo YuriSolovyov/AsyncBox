@@ -107,7 +107,8 @@
       currentWindowOnload();
     }
     htmlReporter.initialize();
-    env.execute();
+    // do not exec specs right ahead
+    // env.execute();
   };
 
   /**
