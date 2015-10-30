@@ -1,6 +1,6 @@
 {
   "name": "async-box",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Your main application object with promise async api API",
   "author": {
     "name": "Yuri Solovyov"
