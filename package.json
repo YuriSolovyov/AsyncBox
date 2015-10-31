@@ -20,10 +20,6 @@
     "promise",
     "app"
   ],
-  "dependencies": {
-    "bluebird": "3.0",
-    "wolfy87-eventemitter": "4.3.0"
-  },
   "devDependencies": {
     "jasmine": "^2.3.0",
     "jasmine-spec-reporter": "^2.4.0",

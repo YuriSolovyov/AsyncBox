@@ -1,5 +1,13 @@
 describe("async-box", function() {
 
+    delay = function(ms) {
+        return new Promise(function(resolve) {
+            setTimeout(function() {
+                resolve();
+            }, ms);
+        });
+    };
+
     var app;
     beforeEach(function() {
         app = new AsyncBox();
@@ -77,7 +85,7 @@ describe("async-box", function() {
 
         it('should respond to async request with promise', function(done) {
             app.respondAsync('req-type', function() {
-                return Promise.delay(42).then(function() {
+                return delay(42).then(function() {
                     return 'async-response';
                 })
             });
@@ -141,13 +149,13 @@ describe("async-box", function() {
 
         it('should resolve a promise with responses array', function(done) {
             app.respondAsync('request-type-1', function(arg) {
-                return new Promise.delay(42).then(function() {
+                return delay(42).then(function() {
                     return arg;
                 });
             });
 
             app.respondAsync('request-type-2', function(arg) {
-                return new Promise.delay(33).then(function() {
+                return delay(33).then(function() {
                     return 'request-arg-' + arg;
                 });
             });

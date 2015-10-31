@@ -1,23 +1,25 @@
-var webpack = require("webpack");
-var Promise = require("bluebird");
+const webpack = require("webpack");
+const Promise = require("bluebird");
 
-var configs = [{
+const minificationConfig = new webpack.optimize.UglifyJsPlugin({
+    output: {
+        comments: false,
+    },
+    compress: {
+        dead_code: false,
+        side_effects: false
+    }
+});
+
+const configs = [{
     entry: './lib/main.js',
     output: {
         path: __dirname + '/dist',
-        filename: 'async-box.min.js'
+        filename: 'async-box.min.js',
+        library: 'async-box',
+        libraryTarget: 'umd'
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            output: {
-                comments: false,
-            },
-            compress: {
-                dead_code: false,
-                side_effects: false
-            }
-        })
-    ]
+    plugins: [minificationConfig]
 }];
 
 Promise.map(configs, function(config) {
@@ -29,7 +31,6 @@ Promise.map(configs, function(config) {
                 reject(err);
             }
         });
-
     });
 }).all().then(function(results) {
     results.forEach(function(result) {
