@@ -2,6 +2,12 @@
 
 AsyncBox is a library for your main `application` object, it supports Sync and Async APIs
 
+Requires runtime with `Map` and `Promise` APIs available.
+
+Node 4+ and evergreen browsers will be the best option.
+
+`Promise` can be polifilled with [Bluebird](https://github.com/petkaantonov/bluebird) library.
+
 App object provides own API plus evented `EventEmitter` API
 
 Usage:
