@@ -9,15 +9,16 @@ Node 4+ and evergreen browsers are the best option.
 
 App object provides own API plus evented `EventEmitter` API
 
-Usage:
+### Usage:
 
 ```javascript
+// create app object
 var AsyncBox = require('async-box');
-
 var app = new AsyncBox();
+```
 
-// Async API:
-
+### Async API:
+```javascript
 app.respondAsync('some-request-name', function(requestData) {
     // response can be any plain JavaScript value, object or ...
     return 'response-text';
@@ -37,9 +38,10 @@ app.requestAsync('some-request-name').then(function(response) {
 app.requestAsync('async-promise-request').then(function(response) {
     console.log(response); // -> 'response-promise'
 });
+```
 
-// Sync API:
-
+### Sync API:
+```javascript
 app.respondSync('some-sync-request', function(request-data) {
     // response is any valid JavaScript value
     return 'some-response-value';
@@ -47,11 +49,11 @@ app.respondSync('some-sync-request', function(request-data) {
 
 const response = app.requestSync('some-sync-request');
 console.log(response); // -> 'some-response-value'
+```
+### Batch API:
 
-// Batch API:
-
-// Async:
-
+#### Async:
+```javascript
 app.respondAsync('request-type-one', function(requestData) {
     console.log(requestData); // -> { key: 'some-value' }
     // it could be any amount of code here,
@@ -74,9 +76,9 @@ app.requestAllAsync([
 ]).then(function(results) {
     console.log(results); // -> ['one', 'two']
 });
-
-// Sync: 
-
+```
+#### Sync: 
+```javascript
 app.respondSync('sync-request-one', function(requestData) {
     console.log(requestData); // -> { key: 'sync-one' }
     return 'sync-one';
