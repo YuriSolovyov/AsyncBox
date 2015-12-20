@@ -21,7 +21,7 @@
     "app"
   ],
   "devDependencies": {
-    "jasmine": "^2.3.0",
+    "jasmine": "^2.4.0",
     "jasmine-spec-reporter": "^2.4.0",
     "jasmine-expect ": "latest",
     "webpack": "^1.12.2"
