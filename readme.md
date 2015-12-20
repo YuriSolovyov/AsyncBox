@@ -1,4 +1,5 @@
-# AsyncBox [![npm version](https://badge.fury.io/js/async-box.svg)](https://badge.fury.io/js/async-box)
+# AsyncBox ![Codeship CI status](https://codeship.com/projects/463f47b0-897a-0133-9ad9-16883749aea7/status?branch=master)
+![npm version](https://badge.fury.io/js/async-box.svg)
 
 AsyncBox is a library for your main `application` object, it supports Sync and Async APIs
 
