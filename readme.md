@@ -103,3 +103,6 @@ const responses = app.requestAllSync([
 
 console.log(responses); // ['sync-one', 'sync-two']
 ```
+### License
+
+MIT © Yury Solovyov
